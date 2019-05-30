@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block body %}
+
+<div id="title">
+<h1>Data Collection App!</h1>
+</div>
+{% for i in name  %}
+<ul>
+<li><h2><b>Name:</b> {{ i.name }}</h2></li>
+<li><b>Father name:</b> {{ i.fathername }}</li>
+<li><b>Address: </b>{{ i.address }}</li>
+<li><b>Age:</b> {{ i.age }}</li>
+<li><b>ph#</b> 0{{ i.ph }}</li>
+<li><b>Date Time: </b> {{ i.date }}</li>
+<div id="update"><a  href="{% url 'edit' pk=i.pk %}">Update</a></div>
+</ul>
+{% endfor %}
+{% endblock body %}
